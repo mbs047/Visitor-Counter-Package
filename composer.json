@@ -22,5 +22,9 @@
             ]
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "required": {
+        "stevebauman/location": "^6.4",
+        "jenssegers/agent": "^2.6"
+    }
 }
