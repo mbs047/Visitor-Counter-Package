@@ -1,0 +1,26 @@
+{
+    "name": "devhereco/visitor",
+    "description": "A Laravel package to save and track application visitors.",
+    "keywords": ["laravel", "firebase", "firebase", "sdk", "api", "database", "fcm", "gcm"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "MohammedSB",
+            "email": "mohammed.b.dev@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Devhereco\\Visitor\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Devhereco\\Visitor\\ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+}
