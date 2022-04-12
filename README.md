@@ -21,7 +21,7 @@
 
 ```php
 // ...
-\Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+\Devhereco\Visitor\Http\Middleware\VisitorCounter::class,
 ```
 
 ### 3. Migrations
