@@ -5,11 +5,15 @@ namespace Devhereco\Visitor;
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
 
-    public function boot()
+    protected $middleware = [
+        'VisitorCounter' => 'Vendor\Visitor\src\Http\Middleware\VisitorCounter'
+    ];
+
+    public function boot(Illuminate\Routing\Router $router)
     {
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
-        $this->app['router']->middleware('key', VisitorCounter::class);
-        
+        $router->middleware('custom_auth', 'Path\To\Your\Middleware\custom_auth');
+
 
         //$this->mergeConfigFrom(__DIR__.'/configs/visitor.php', 'visitor');
 

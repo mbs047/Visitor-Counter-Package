@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace Devhereco\Visitor\Http\Middleware;
 
-use App\Models\Visitor;
+use Devhereco\Visitor\Models\Visitor;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
