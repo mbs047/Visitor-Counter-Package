@@ -8,8 +8,8 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     public function boot()
     {
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
-        $this->app['router']->aliasMiddleware('VisitorCounter', \Devhereco\Visitor\src\Http\Middleware\VisitorCounter::class);
-
+        $this->app['router']->middleware('key', VisitorCounter::class);
+        
 
         //$this->mergeConfigFrom(__DIR__.'/configs/visitor.php', 'visitor');
 
