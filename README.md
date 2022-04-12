@@ -29,3 +29,18 @@
 ```sh
 php artisan migrate
 ```
+
+# Themes
+Can be managed from `themes` table, and theme name from `config_settings`
+
+| column | rules | type of data |
+| ---- | ------ | ------ |
+| `user_id` | nullable | if user is logged the id will be stored "
+| `ip_address` | required | user used ip address |
+| `user_agent` | required | user used agent |
+| `browser` | required | user used browser |
+| `browser_version` | required | user used browser version |
+| `platform` | required | user operating system |
+| `platform_version` | requird | user system version | 
+| `device` | required | user manufacturer device |
+| `location` | required | user location |
