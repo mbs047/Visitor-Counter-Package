@@ -4,12 +4,10 @@ namespace Devhereco\Visitor;
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
-    public function boot(\Illuminate\Contracts\Http\Kernel $kernel)
+    public function boot()
     {
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
-        $this->app['router']->middleware('counter', \Devhereco\Visitor\src\Http\Middleware\VisitorCounter::class);
-        $kernel->appendMiddleware('Devhereco\Visitor\src\Http\Middleware\VisitorCounter'); // prependMiddleware works too.
-
+  
         //$this->mergeConfigFrom(__DIR__.'/configs/visitor.php', 'visitor');
 
         /* $this->publishes([
