@@ -17,7 +17,7 @@ class CreateVisitorsTable extends Migration
             $table->id();
 
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->string('ip_address')->nullable();
+            $table->ipAddress('ip_address')->nullable();
             $table->string('user_agent')->nullable();
             $table->string('browser')->nullable();
             $table->string('browser_version')->nullable();
