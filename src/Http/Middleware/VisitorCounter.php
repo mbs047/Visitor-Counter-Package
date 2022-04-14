@@ -21,12 +21,13 @@ class VisitorCounter
     public function handle(Request $request, Closure $next)
     {
         $query = Visitor::where('ip_address', $request->ip())->first();
-        $agent = new Agent();
-        $location = Location::get(request()->ip());
 
-        if (!$query)
-        {
+        if (!$query) {
+            $agent = new Agent();
+            $location = Location::get(request()->ip());
+
             Visitor::create([
+                'user_id'           => Auth::user()->id ?? Null,
                 'ip_address'        => request()->ip(),
                 'user_agent'        => $agent->setUserAgent(),
                 'browser'           => $agent->browser(),
@@ -36,16 +37,6 @@ class VisitorCounter
                 'device'            => $agent->device(),
                 'location'          => ($location->countryName ?? Null) . ', ' . ($location->regionName ?? Null) . ', ' . ($location->cityName ?? Null),
             ]);
-        } else {
-            $query['ip_address']       = request()->ip();
-            $query['user_agent']       = $agent->setUserAgent();
-            $query['browser']          = $agent->browser();
-            $query['browser_version']  = $agent->version($agent->browser());
-            $query['platform']         = $agent->platform();
-            $query['platform_version'] = $agent->version($agent->platform());
-            $query['device']           = $agent->device();
-            $query['location']         = ($location->countryName ?? Null) . ', ' . ($location->regionName ?? Null) . ', ' . ($location->cityName ?? Null);
-            $query->save();
         }
 
         return $next($request);
