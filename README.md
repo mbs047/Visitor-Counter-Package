@@ -1,5 +1,4 @@
-# Malath SMS 
-**Malath SMS** is a Laravel package that provides a method to use malath API services, with a few simple lines of code.
+# Visitors counter 
 
 [![downloads](https://badgen.net//packagist/dt/devhereco/visitor)](https://packagist.org/packages/devhereco/visitor)
 [![stars](https://badgen.net/github/stars/devhereco/Visitor-Counter-Package)](https://github.com/devhereco/Visitor-Counter-Package)
